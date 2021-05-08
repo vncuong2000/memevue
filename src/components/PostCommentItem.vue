@@ -26,7 +26,7 @@ export default {
       if (this.comment.profilepicture) {
         return this.comment.profilepicture;
       } else {
-        return "/public/assets/avatar-01.png";
+        return "https://i.pinimg.com/170x/3c/63/1a/3c631aab6d165c9abafa4e387ebf6936.jpg";
       }
     },
     formatTime() {

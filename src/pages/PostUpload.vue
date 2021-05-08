@@ -123,7 +123,7 @@ export default {
       if (this.obj_image && this.obj_image.base64URL) {
         return this.obj_image.base64URL;
       }
-      return "/public/assets/no_image_available.jpg";
+      return "https://i.pinimg.com/170x/3c/63/1a/3c631aab6d165c9abafa4e387ebf6936.jpg";
     }
   },
   methods: {

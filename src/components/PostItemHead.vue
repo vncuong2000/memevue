@@ -25,7 +25,7 @@ export default {
   computed: {
     getAvatar() {
       if (this.post.profilepicture) return this.post.profilepicture;
-      return "/public/assets/avatar-02.png";
+      return "https://i.pinimg.com/170x/3c/63/1a/3c631aab6d165c9abafa4e387ebf6936.jpg";
     },
     getUserLink() {
       let userid = this.post.USERID || 1;

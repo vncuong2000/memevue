@@ -52,7 +52,7 @@ export default {
       if (this.currentUser.profilepicture) {
         return this.currentUser.profilepicture;
       } else {
-        return "/public/assets/avatar-01.png";
+        return "https://i.pinimg.com/170x/3c/63/1a/3c631aab6d165c9abafa4e387ebf6936.jpg";
       }
     }
   },

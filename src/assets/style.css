@@ -2308,7 +2308,7 @@ select.form-control:focus {
   left: 0;
   right: 0;
   background-color: #ffffff;
-  background-image: url("/public/assets/menu-bg.jpg");
+  background-image: linear-gradient(to bottom right, white, #3482e2ba);
   background-position: cover;
   border-top: solid 1px #e5e9ec;
   border-bottom: solid 1px #e6e9f1;
