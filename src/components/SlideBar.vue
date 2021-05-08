@@ -21,7 +21,10 @@
 
 <script>
 import { mapGetters } from "vuex";
+import PostItem from "../components/PostItem.vue";
+
 export default {
+  components: { PostItem },
   name: "slide-bar",
   computed: {
     ...mapGetters(["isLogin", "getListPostOfCurrentUser"])

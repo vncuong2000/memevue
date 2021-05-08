@@ -60,7 +60,6 @@ export default {
   methods: {
     ...mapActions(["register"]),
     handleSubmitRegister(e) {
-      console.log("%cRegister.vue--handleSubmitRegister", "color:green");
       let data = {
         email: this.email,
         fullname: this.fullname,

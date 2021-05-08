@@ -16,7 +16,7 @@
           </ul>
         </div>
         <post-comment-add />
-        <post-comments />
+        <post-comments :comments="getDataPostDetail.comments" />
       </div>
     </div>
     <div class="col-lg-4">
@@ -53,7 +53,6 @@ export default {
       };
       this.getPostDetailById(obj).then(resp => {
         if (!resp.ok) {
-          console.log(resp.error);
           this.$router.push({
             path: "/",
             query: {
@@ -64,7 +63,6 @@ export default {
       });
     },
     getLinkCategory(category) {
-      console.log("%cAppNavigation.vue--getLinkCategory", "color:green");
       return {
         name: "home-page",
         query: {
@@ -76,13 +74,11 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("%cPostDetail.vue--watch($route)", "color:green");
       this.postid = to.params.id;
       this.fetchDataPostDetail();
     }
   },
   created() {
-    console.log("%cPostDetail.vue--created", "color:green");
     this.fetchDataPostDetail();
   }
 };

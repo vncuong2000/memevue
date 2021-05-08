@@ -59,14 +59,12 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("%cSearch.vue--watch($route)", "color:green");
       this.query = to.query.query;
       this.checkQuery();
       this.fetchDataSearch();
     }
   },
   created() {
-    console.log("%cSearch.vue--created", "color:green");
     this.query = this.$route.query.query;
     this.checkQuery();
     this.fetchDataSearch();

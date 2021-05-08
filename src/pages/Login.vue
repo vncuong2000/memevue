@@ -47,7 +47,6 @@ export default {
   methods: {
     ...mapActions(["login"]),
     handleSubmitLogin() {
-      console.log("%cLogin.vue--handleSubmitLogin", "color:green");
       let data = {
         email: this.email,
         password: this.password

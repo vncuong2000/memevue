@@ -1,21 +1,13 @@
 <template>
-  <div class="ass1-comments">
+  <div class="ass1-comments" v-if="comments && comments.length">
     <div class="ass1-comments__head">
-      <div class="ass1-comments__title">214 Bình luận</div>
-      <div class="ass1-comments__options">
-        <span>Sắp xếp theo:</span>
-        <a href="#" class="ass1-comments__btn-upvote ass1-btn-icon"
-          ><i class="icon-Upvote"></i
-        ></a>
-        <a href="#" class="ass1-comments__btn-down ass1-btn-icon"
-          ><i class="icon-Downvote"></i
-        ></a>
-        <a href="#" class="ass1-comments__btn-expand ass1-btn-icon"
-          ><i class="icon-Expand_all"></i
-        ></a>
-      </div>
+      <div class="ass1-comments__title">{{ comments.length }} Bình luận</div>
     </div>
-    <post-comment-item />
+    <post-comment-item
+      v-for="item in comments"
+      :key="item.CID"
+      :comment="item"
+    />
   </div>
 </template>
 
@@ -24,8 +16,10 @@ import PostCommentItem from "./PostCommentItem.vue";
 export default {
   components: { PostCommentItem },
   name: "post-comment",
+  props: {
+    comments: { type: Array, default: [] }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

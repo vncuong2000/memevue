@@ -20,13 +20,11 @@ export default {
     ...mapActions(["getListPostHasPaging"])
   },
   created() {
-    console.log("%cHomePage.vue--created", "color:green");
     var tagIndex = parseInt(this.$route.query.tagIndex);
     this.getListPostHasPaging({ tagIndex });
   },
   watch: {
     $route(to, from) {
-      console.log("%cHomePage.vue--watch($route)", "color:green");
       var tagIndex = parseInt(to.query.tagIndex);
       this.getListPostHasPaging({ tagIndex });
     }

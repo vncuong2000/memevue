@@ -59,7 +59,6 @@ export default {
       }
     },
     handleChangePassword() {
-      console.log("%cChangePassword.vue--handleChangePassword", "color:green");
       let data = {
         oldPassword: this.oldPassword,
         newPassword: this.newPassword,
@@ -87,13 +86,11 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("%cChangePassword.vue--watch($route)", "color:green");
       this.userid = to.params.id;
       this.checkIsCurrentUser();
     }
   },
   created() {
-    console.log("%cChangePassword.vue--created", "color:green");
     this.userid = this.$route.params.id;
     this.checkIsCurrentUser();
   }

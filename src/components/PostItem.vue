@@ -17,9 +17,6 @@ export default {
   name: "post-item",
   props: {
     post: { type: Object, default: null }
-  },
-  created() {
-    console.log("%cPostItem--created", "color:green");
   }
 };
 </script>

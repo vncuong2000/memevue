@@ -1,32 +1,40 @@
 <template>
-  <div class="ass1-comments__section">
+  <div class="ass1-comments__section" v-if="comment">
     <a href="#" class="ass1-comments__avatar ass1-avatar"
-      ><img src="/public/assets/avatar-02.png" alt=""
+      ><img :src="getAvatar" :alt="comment.fullname"
     /></a>
     <div class="ass1-comments__content">
-      <a href="#" class="ass1-comments__name">Tây Tạng</a>
-      <span class="ass1-comments__passed">12 giờ trước</span>
+      <a href="#" class="ass1-comments__name">{{ comment.fullname }}</a>
+      <span class="ass1-comments__passed">{{ formatTime }}</span>
       <p>
-        Scratch off globe, for when you want to wipe out any country that
-        displeases you but lack the weaponry to do so.
+        {{ comment.comment }}
       </p>
-      <div class="ass1-comments__info">
-        <a href="#" class="ass1-comments__btn-upvote ass1-btn-icon"
-          ><i class="icon-Upvote"></i><span>901</span></a
-        >
-        <a href="#" class="ass1-comments__btn-down ass1-btn-icon"
-          ><i class="icon-Downvote"></i><span>36</span></a
-        >
-      </div>
     </div>
   </div>
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "post-comment-item",
+  props: {
+    comment: { type: Object, default: null }
+  },
+  computed: {
+    getAvatar() {
+      if (this.comment.profilepicture) {
+        return this.comment.profilepicture;
+      } else {
+        return "/public/assets/avatar-01.png";
+      }
+    },
+    formatTime() {
+      moment.locale("vi");
+      return moment(this.comment.time_added).fromNow();
+    }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

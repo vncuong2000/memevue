@@ -5,9 +5,9 @@
         <router-link to="/" class="ass1-logo"> Meme Vuejs </router-link>
         <app-navigation />
         <app-header-search />
-        <a href="#" class="ass1-header__btn-upload ass1-btn">
+        <router-link to="/post-upload" class="ass1-header__btn-upload ass1-btn">
           <i class="icon-Upvote"></i> Upload
-        </a>
+        </router-link>
         <router-link
           v-if="!isLogin"
           to="/login"

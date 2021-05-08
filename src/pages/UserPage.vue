@@ -65,13 +65,11 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("%cUserPage.vue--watch($route)", "color:green");
       this.userid = to.params.id;
       this.fetchAllData();
     }
   },
   created() {
-    console.log("%cUserPage.vue--created", "color:green");
     this.userid = this.$route.params.id;
     this.fetchAllData();
   }

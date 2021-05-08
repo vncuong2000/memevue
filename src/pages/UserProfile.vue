@@ -85,7 +85,6 @@ export default {
       }
     },
     handleEditProfile() {
-      console.log("%cUserProfile.vue--handleEditProfile", "color:green");
       if (!this.fullname) {
         this.fullname = this.currentUser.fullname;
       }
@@ -131,13 +130,11 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("%cUserProfile.vue--watch($route)", "color:green");
       this.userid = to.params.id;
       this.checkIsCurrentUser();
     }
   },
   created() {
-    console.log("%cUserProfile.vue--created", "color:green");
     this.userid = this.$route.params.id;
     this.checkIsCurrentUser();
   }

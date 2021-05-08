@@ -12,13 +12,11 @@ const store = new Vuex.Store({
   },
   actions: {
     setLoading({ commit }, loading = false) {
-      console.log("%cStore/actions.js--setLoading", "color:blue");
       commit("SET_LOADING", loading);
     }
   },
   mutations: {
     SET_LOADING(state, loading) {
-      console.log("%cStore/mutations.js--SET_LOADING", "color:blue");
       state.isLoading = loading;
     }
   },

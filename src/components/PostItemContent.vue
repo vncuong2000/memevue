@@ -41,7 +41,4 @@ export default {
 };
 </script>
 
-<style>
-.ass1-section__content p {
-}
-</style>
+<style></style>

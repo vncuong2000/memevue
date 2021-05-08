@@ -3,7 +3,6 @@ import { parseJwt } from "../../helpers";
 import { CONFIG_ACCESS_TOKEN } from "../../const";
 export default {
   async getUserById({ commit }, { userid = null }) {
-    console.log("%cStore/user/actions.js--getUserById", "color:blue");
     var config = {
       params: {
         userid: userid
@@ -35,7 +34,6 @@ export default {
     }
   },
   async login({ commit, dispatch }, { email = "", password = "" }) {
-    console.log("%cStore/user/actions.js--login", "color:blue");
     let data = {
       email: email,
       password: password
@@ -69,7 +67,6 @@ export default {
     }
   },
   async checkLogin({ commit, dispatch }) {
-    console.log("%cStore/user/actions.js--checkLogin", "color:blue");
     try {
       let tokenLocal = localStorage.getItem(CONFIG_ACCESS_TOKEN);
       let userObj = parseJwt(tokenLocal);
@@ -110,7 +107,6 @@ export default {
     commit("SET_LOGOUT");
   },
   async getListPostByUserId({ commit }, { userid }) {
-    console.log("%cStore/user/actions.js--getListPostByUserId", "color:blue");
     try {
       let tokenLocal = localStorage.getItem(CONFIG_ACCESS_TOKEN);
       let config = {
@@ -154,7 +150,6 @@ export default {
     }
   },
   async register({ commit, dispatch }, data) {
-    console.log("%cStore/user/actions.js--register", "color:blue");
     try {
       commit("SET_LOADING", true);
       let result = await axiosInstance.post("/member/register.php", data);
@@ -191,7 +186,6 @@ export default {
     { commit },
     { fullname = "", description = "", gender = "", avatar = null }
   ) {
-    console.log("%cStore/user/actions.js--updateProfile", "color:blue");
     try {
       let bodyFormData = new FormData();
       bodyFormData.append("fullname", fullname);
@@ -236,7 +230,6 @@ export default {
     }
   },
   async changePassword({ commit }, data) {
-    console.log("%cStore/user/actions.js--changePassword", "color:blue");
     try {
       let tokenLocal = localStorage.getItem(CONFIG_ACCESS_TOKEN);
       let config = {
@@ -245,14 +238,12 @@ export default {
           Authorization: `Bearer ${tokenLocal}`
         }
       };
-      console.log(data);
       commit("SET_LOADING", true);
       let result = await axiosInstance.post(
         "/member/password.php",
         data,
         config
       );
-      console.log(result);
       commit("SET_LOADING", false);
       if (result.data.status === 200) {
         return {
@@ -261,14 +252,12 @@ export default {
           message: result.data.message
         };
       } else {
-        console.log("warning");
         return {
           ok: false,
           error: result.data.error
         };
       }
     } catch (error) {
-      console.log(error);
       commit("SET_LOADING", false);
       return {
         ok: false,

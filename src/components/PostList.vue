@@ -31,7 +31,6 @@ export default {
   methods: {
     ...mapActions(["getListPostHasPaging"]),
     handleLoadMore() {
-      console.log("%cPostList.vue--handleLoadMore", "color:green");
       this.currPage = this.currPage + 1;
       let obj = {
         pagesize: this.pagesize,
@@ -42,11 +41,9 @@ export default {
     }
   },
   created() {
-    console.log("%cPostList--created", "color:green");
   },
   watch: {
     $route(to, from) {
-      console.log("%cPostList.vue--watch($route)", "color:green");
       this.currPage = CURRENT_PAGE;
     }
   }

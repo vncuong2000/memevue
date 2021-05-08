@@ -21,18 +21,16 @@
 </template>
 
 <script>
-import {removeVietnameseFromString} from '../helpers'
+import { removeVietnameseFromString } from "../helpers";
 export default {
   name: "app-navigation",
   computed: {
     categories() {
-    console.log('%cAppNavigation.vue--categories','color:green');
       return this.$store.state.post.categories;
     }
   },
   methods: {
     getLinkCategory(category) {
-    console.log('%cAppNavigation.vue--getLinkCategory','color:green');
       return {
         name: "home-page",
         query: {

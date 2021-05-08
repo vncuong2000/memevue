@@ -14,7 +14,6 @@ export default {
   },
   computed: {
     countComment() {
-      console.log("%cPostItemHead--countComment", "color:green");
       if (this.post.count) return this.post.count;
       return 0;
     }

@@ -24,12 +24,10 @@ export default {
   },
   computed: {
     getAvatar() {
-      console.log("%cPostItemHead--getAvatar", "color:green");
       if (this.post.profilepicture) return this.post.profilepicture;
       return "/public/assets/avatar-02.png";
     },
     getUserLink() {
-      console.log("%cPostItemHead--getUserLink", "color:green");
       let userid = this.post.USERID || 1;
       return {
         name: "user-page",
@@ -39,7 +37,6 @@ export default {
       };
     },
     formatTime() {
-      console.log("%cPostItemHead--formatTime", "color:green");
       moment.locale("vi");
       return moment(this.post.time_added).fromNow();
     },
@@ -59,7 +56,4 @@ export default {
 </script>
 
 <style>
-.ass1-section__name {
-  text-transform: capitalize;
-}
 </style>
